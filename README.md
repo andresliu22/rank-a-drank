@@ -34,6 +34,6 @@ Cocktails API - https://www.thecocktaildb.com/api.php
 
 Instead of Bootstrap:  http://getskeleton.com/
 
-
+Made with Luv
 
 
