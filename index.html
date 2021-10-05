@@ -14,11 +14,12 @@
 </head>
 
 <body>
-    <header>
-        <h1>Drink Rating App</h1>
-    </header>
+    
 
-    <main>
+    <main class="grid-container">
+        <header>
+            <h1>Drink Rating App</h1>
+        </header>
         <div class="inputdiv">
             <form class="drinkChoice" id="drinkChoice">
                 <input type="text" id="drinkInput" autocomplete="on" placeholder="Please write your drink...">
@@ -57,16 +58,20 @@
 
         </div>
 
-        <div class="card" style="width: 300px;">
-            <div class="card-divider">
-              This is a header
-            </div>
-            <img src="assets/img/generic/rectangle-1.jpg">
-            <div class="card-section">
-              <h4>This is a card.</h4>
-              <p>It has an easy to override visual style, and is appropriately subdued.</p>
-            </div>
-          </div>
+        <div class="drinks-card" id="drinks-card" style="display: flex; flex-wrap: wrap;">
+            <!-- <div class="card" style="width: 300px; margin: 10px;">
+                <div class="card-divider">
+                  This is a header
+                </div>
+                <img src="">
+                <div class="card-section">
+                  <h4>This is a card.</h4>
+                  <p>It has an easy to override visual style, and is appropriately subdued.</p>
+                </div>
+              </div>
+               -->
+        </div>
+        
         <footer></footer>
     </main>
 
