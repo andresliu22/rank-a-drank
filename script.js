@@ -3,7 +3,6 @@ var nameInputEl = $('#drinkInput');
 var ingredientInputEl = $('#ingredientInput');
 var submitBtnEl = $('#drinkSubmit');
 var switchBtnEl = $('#switchBtn');
-var drinkChoiceEl = $('<a>')
 
 function submitDrink(event) {
     event.preventDefault()
@@ -85,11 +84,11 @@ function switchInput(event) {
     }
 }
 
-function drinkRating() {
-    console.log(hey)
+function drinkRating(event) {
+    console.log(event.target)
 }
 
-drinkChoiceEl.on("click", drinkRating);
+$("#drinks-card").on("click", ".card", drinkRating);
 
 switchBtnEl.on("click", switchInput);
 submitBtnEl.on("click", submitDrink);
