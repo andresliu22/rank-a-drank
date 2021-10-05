@@ -85,7 +85,7 @@ function switchInput(event) {
 }
 
 function drinkRating(event) {
-    console.log(event.target)
+    
 }
 
 $("#drinks-card").on("click", ".card", drinkRating);
