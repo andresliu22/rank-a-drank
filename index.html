@@ -4,32 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./style.css">
     <title>Drink Rating App</title>
 </head>
 
-<header>
-    <h1>Drink Rating App</h1>
-</header>
-
 <body>
+    <header>
+        <h1>Drink Rating App</h1>
+    </header>
+
     <main>
-        <container class="inputContainer">
-            <form class="drinkChoice">
+        <div class="inputdiv">
+            <form class="drinkChoice" id="drinkChoice">
                 <input type="text" id="drinkInput" autocomplete="on" placeholder="Please write your drink...">
-                <button class="drinkSubmit">Submit</button>
+                <button class="drinkSubmit" id="drinkSubmit">Submit</button>
             </form>
 
-        </container>
+        </div>
 
-        <container class="drinkResults">
+        <div class="drinkResults">
             <div class="drinksPop">
 
             </div>
         
-        </container>
+        </div>
 
-        <container class="ratingsContainer">
+        <div class="ratingsdiv">
             <div class="ratings">
 
             </div>
@@ -37,25 +41,28 @@
 
             </div>
 
-        </container>
+        </div>
 
-        <container class="modalMsg">
+        <div class="modalMsg">
 
-        </container>
+        </div>
 
-        <container class="drinkSuggest">
+        <div class="drinkSuggest">
 
-        </container>
+        </div>
 
-        <container class="locationSuggest">
+        <div class="locationSuggest">
 
-        </container>
-
+        </div>
+        <footer>Made with Luv</footer>
     </main>
 
-<footer>Made with Luv</footer>
-
-<script src="/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+    <script src="./script.js"></script>
     
 </body>
 </html>
