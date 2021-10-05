@@ -49,6 +49,7 @@ function displayDrinks(data) {
         console.log(drinks[i]);
         var card = $('<a>')
         card.addClass("card");
+        card.attr("href", "index2.html");
         card.css({ "flex": "1 0 300px", "margin": "10px" })
         var cardHeader = $('<div>');
         cardHeader.addClass("card-divider");
@@ -85,7 +86,7 @@ function switchInput(event) {
 }
 
 function drinkRating(event) {
-    
+
 }
 
 $("#drinks-card").on("click", ".card", drinkRating);
