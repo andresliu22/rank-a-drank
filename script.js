@@ -49,7 +49,7 @@ function displayDrinks(data) {
         console.log(drinks[i]);
         var card = $('<a>')
         card.addClass("card");
-        card.attr("href", "index2.html");
+        card.attr("href", "index2.html?drink=" + drinks[i].strDrink);
         card.css({ "flex": "1 0 300px", "margin": "10px" })
         var cardHeader = $('<div>');
         cardHeader.addClass("card-divider");
