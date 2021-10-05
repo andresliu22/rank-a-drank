@@ -2,10 +2,12 @@ var formEl = $('#drinkChoice');
 var nameInputEl = $('#drinkInput');
 var ingredientInputEl = $('#ingredientInput');
 var submitBtnEl = $('#drinkSubmit');
+var switchBtnEl = $('#switchBtn');
 
 function submitDrink(event) {
     event.preventDefault()
 
+    $('#drinks-card').empty();
     var drink = nameInputEl.val();
     var ingredient = ingredientInputEl.val();
 
@@ -20,6 +22,7 @@ function submitDrink(event) {
             }
         })
         nameInputEl.val('');
+        ingredientInputEl.val('');
     }
 
     if (ingredient !== "") {
@@ -32,6 +35,7 @@ function submitDrink(event) {
                 })
             }
         })
+        nameInputEl.val('');
         ingredientInputEl.val('');
     }
 
@@ -45,7 +49,7 @@ function displayDrinks(data) {
         console.log(drinks[i]);
         var card = $('<div>');
         card.addClass("card");
-        card.css({"width": "300px", "margin":"10px"})
+        card.css({"flex": "1 0 300px", "margin":"10px"})
         var cardHeader = $('<div>');
         cardHeader.addClass("card-divider");
         var cardImg = $('<img>');
@@ -55,7 +59,7 @@ function displayDrinks(data) {
         cardHeader.text(drinks[i].strDrink);
         cardImg.attr("src", drinks[i].strDrinkThumb);
         
-        cardSection.append('<h4>Rating</h4><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>');
+        cardSection.append('<h4><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></h4>');
         card.append(cardHeader);
         card.append(cardImg);
         card.append(cardSection);
@@ -64,4 +68,21 @@ function displayDrinks(data) {
     }
 }
 
+function switchInput(event) {
+    event.preventDefault();
+    if (ingredientInputEl.css("display") === "none") {
+        nameInputEl.css({"display": "none"});
+        ingredientInputEl.css({"display": "block"});
+        switchBtnEl.text("Search by Drink");
+        ingredientInputEl.val('');
+
+    } else if (nameInputEl.css("display") === "none") {
+        nameInputEl.css({"display": "block"});
+        ingredientInputEl.css({"display": "none"});
+        switchBtnEl.text("Search by Ingredient");
+        nameInputEl.val('');
+    }
+}
+
+switchBtnEl.on("click", switchInput);
 submitBtnEl.on("click", submitDrink);
