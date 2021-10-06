@@ -9,10 +9,9 @@ function currentDrink(data) {
 
     for (var i = 0; i < drinks.length; i++) {
         console.log(drinks[i]);
-        var card = $('<a>')
+        var card = $('<div>')
         card.addClass("card");
-        card.attr("href", "index2.html?drink=" + drinks[i].strDrink);
-        card.css({ "flex": "1 0 300px", "margin": "10px" })
+        card.css({"width": '500px', "margin": "10px" })
         var cardHeader = $('<div>');
         cardHeader.addClass("card-divider");
         var cardImg = $('<img>');
