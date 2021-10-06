@@ -5,8 +5,13 @@ var locationSuggestEl = $('location-suggest-card')
 function currentDrink(data) {
 
 
-        var card = $('<div>')
+    var drinks = data.drinks;
+
+    for (var i = 0; i < drinks.length; i++) {
+        console.log(drinks[i]);
+        var card = $('<a>')
         card.addClass("card");
+        card.attr("href", "index2.html?drink=" + drinks[i].strDrink);
         card.css({ "flex": "1 0 300px", "margin": "10px" })
         var cardHeader = $('<div>');
         cardHeader.addClass("card-divider");
@@ -14,10 +19,8 @@ function currentDrink(data) {
         var cardSection = $('<div>');
         cardSection.addClass("card-section");
 
-        cardHeader.text(drinkName);
-        cardImg.attr("src", drinkName);
-        console.log('drink');
-        
+        cardHeader.text(drinks[i].strDrink);
+        cardImg.attr("src", drinks[i].strDrinkThumb);
 
         cardSection.append('<h4><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></h4>');
         card.append(cardHeader);
@@ -26,8 +29,9 @@ function currentDrink(data) {
 
         $('#chosen-drink-card').append(card);
     }
+    }
 
-    currentDrink();
+    chosenDrink();
 
     function chosenDrink() {
 
