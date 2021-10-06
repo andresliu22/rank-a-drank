@@ -25,7 +25,7 @@ function currentDrink(data) {
         for (var i=0 ; i<5 ; i++) {
             var starBtn = $('<button>')
             starBtn.addClass('starBtn');
-            starBtn.append('<i class="fa fa-star checked"></i>')
+            starBtn.append("<i class='fa fa-star star-"+ (i+1) +"'></i>");
             cardSection.append(starBtn);
 
             starBtn.on("click", rateDrink);
@@ -58,8 +58,17 @@ function chosenDrink() {
 }
 
 function rateDrink(event) {
-    console.log(event.target);
-    console.log("I NEEEEEEEED SOME SLEEEEEEEEEEP")
+    // console.log(event.target.className);
+    var starRating = event.target.className.slice(event.target.className.indexOf('star-') + 5)[0];
+    // console.log(starRating)
+    for (var i=0; i<5; i++) {
+
+        if (i < starRating) {
+            $('.star-' + (i + 1)).addClass('checked');
+        } else {
+            $('.star-' + (i + 1)).removeClass('checked');
+        }
+    }
 }
 
 
