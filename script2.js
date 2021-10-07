@@ -118,7 +118,7 @@ function suggestDrink(rating) {
 
         }
     }
-    
+
     var searchCocktailByIngredientAPI = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + ingredient;
     fetch(searchCocktailByIngredientAPI).then(function (response) {
         if (response.ok) {
@@ -150,8 +150,6 @@ function displaySuggestDrink(drink) {
 submitRatingBtn.on("click", submitRating);
 
 
-
-// function for recommended drink
 
 // api for location info (google map)
 
