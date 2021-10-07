@@ -1,9 +1,15 @@
 var currentDrinkEl = $('#chosen-drink-card');
 var submitRatingBtn = $('#submitRating');
-var ingredient
+var suggestedDrinkEl = $('#suggested-drink-card');
+var ingredient;
+var currentLat;
+var currentLon;
+var yelpApiKey = "XGPJzdsArujs0a5GBLbAgRXVjA0Ht8qthqX-MLFDM0pckAYtxRSmRcJCodfZ9Yxk9WsRQt7Isno_i1ZOlRrlEDY7laqvOLzkb23nclEnir1HfZkyAPxi8jOkwAZfYXYx";
+var nearbyLocationBtn = $('#nearbyLocationBtn');
 
 $(document).ready(function () {
     getChosenDrink();
+    getLocation();
 });
 
 function getChosenDrink() {
@@ -132,10 +138,11 @@ function suggestDrink(rating) {
 }
 
 function displaySuggestDrink(drink) {
+    suggestedDrinkEl.empty();
     var card = $('<a>')
     card.addClass("card");
     card.attr("href", "index2.html?drink=" + drink.strDrink);
-    card.css({ "flex": "1 0 300px", "margin": "10px" })
+    card.css({ "width": "500px", "margin": "10px" })
     var cardHeader = $('<div>');
     cardHeader.addClass("card-divider");
     var cardImg = $('<img>');
@@ -145,9 +152,47 @@ function displaySuggestDrink(drink) {
     card.append(cardImg);
 
 
-    $('#suggested-drink-card').append(card);
+    suggestedDrinkEl.append(card);
 }
+
+// Get Current Location courtesy of w3shools
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else { 
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+  
+function showPosition(position) {
+    currentLat = position.coords.latitude;
+    currentLon = position.coords.longitude;
+    console.log("Lat:" + currentLat + ", Lon:" + currentLon);
+}
+
+function getNearbySuggestions() {
+
+    //var url = "https://api.yelp.com/v3/autocomplete?text=del&latitude=" + currentLat +"&longitude=" + currentLon;
+    var url = "https://api.yelp.com/v3/transactions/delivery/search?latitude=37.786882&longitude=-122.399972"
+    fetch(url, {
+        method: 'GET', // *GET, POST, PUT, DELETE, etc.
+        mode: 'no-cors', // no-cors, *cors, same-origin
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer' + yelpApiKey
+        }
+    }).then(function(response) {
+        if (response.ok) {
+            response.json().then(function(data) {
+                console.log(data);
+            })
+        }
+    });
+}
+
+
 submitRatingBtn.on("click", submitRating);
+nearbyLocationBtn.on("click", getNearbySuggestions);
 
 
 
