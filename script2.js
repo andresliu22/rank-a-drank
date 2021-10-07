@@ -1,5 +1,6 @@
 var currentDrinkEl = $('#chosen-drink-card');
 var submitRatingBtn = $('#submitRating');
+var ingredient
 
 $(document).ready(function () {
     getChosenDrink();
@@ -23,31 +24,31 @@ function getChosenDrink() {
     }
 }
 
+
 function displayChosenDrink(data) {
     var drinks = data.drinks;
     for (var i = 0; i < drinks.length; i++) {
         console.log(drinks[i]);
         var card = $('<div>')
         card.addClass("card");
-        card.css({"width": '500px', "margin": "10px" })
+        card.css({ "width": '500px', "margin": "10px" })
         var cardHeader = $('<div>');
         cardHeader.addClass("card-divider");
         var cardImg = $('<img>');
         var cardSection = $('<div>');
         cardSection.addClass("card-section");
-
+        ingredient = drinks[i].strIngredient1
         cardHeader.text(drinks[i].strDrink);
         cardImg.attr("src", drinks[i].strDrinkThumb);
-        
-        for (var i=0 ; i<5 ; i++) {
+        for (var i = 0; i < 5; i++) {
             var starBtn = $('<button>')
             starBtn.addClass('starBtn');
-            starBtn.append("<i class='fa fa-star star-"+ (i+1) +"'></i>");
+            starBtn.append("<i class='fa fa-star star-" + (i + 1) + "'></i>");
             cardSection.append(starBtn);
 
             starBtn.on("click", rateDrink);
         }
-        
+
         card.append(cardHeader);
         card.append(cardImg);
         card.append(cardSection);
@@ -60,7 +61,7 @@ function rateDrink(event) {
     // console.log(event.target.className);
     var starRating = event.target.className.slice(event.target.className.indexOf('star-') + 5)[0];
     // console.log(starRating)
-    for (var i=0; i<5; i++) {
+    for (var i = 0; i < 5; i++) {
         if (i < starRating) {
             $('.star-' + (i + 1)).addClass('checked');
         } else {
@@ -71,7 +72,7 @@ function rateDrink(event) {
 
 function submitRating() {
     var starsChecked = $('.checked');
-    
+
     if (starsChecked.length > 0) {
 
         if (JSON.parse(localStorage.getItem("ratedDrinks")) !== null) {
@@ -88,21 +89,51 @@ function submitRating() {
             if (ratedDrinks[i].name === drinkObj.name) {
                 ratedDrinks[i].rating = drinkObj.rating;
                 localStorage.setItem("ratedDrinks", JSON.stringify(ratedDrinks));
+                suggestDrink(starsChecked.length);
                 return;
-            } 
+            }
         }
         ratedDrinks.push(drinkObj);
         localStorage.setItem("ratedDrinks", JSON.stringify(ratedDrinks));
+        suggestDrink(starsChecked.length);
+    }
+
+}
+
+function suggestDrink(rating) {
+    if (rating >= 3) {
+        var searchCocktailByIngredientAPI = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + ingredient;
+        fetch(searchCocktailByIngredientAPI).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (data) {
+                    console.log(data);
+                    var randomDrink = data.drinks[Math.floor(Math.random() * data.drinks.length)];
+                    displaySuggestDrink(randomDrink);
+                })
+            }
+        })
     }
 }
 
+function displaySuggestDrink(drink) {
+    var card = $('<a>')
+    card.addClass("card");
+    card.attr("href", "index2.html?drink=" + drink.strDrink);
+    card.css({ "flex": "1 0 300px", "margin": "10px" })
+    var cardHeader = $('<div>');
+    cardHeader.addClass("card-divider");
+    var cardImg = $('<img>');
+    cardHeader.text(drink.strDrink);
+    cardImg.attr("src", drink.strDrinkThumb);
+    card.append(cardHeader);
+    card.append(cardImg);
 
 
+    $('#suggested-drink-card').append(card);
+}
 submitRatingBtn.on("click", submitRating);
 
-// function for current drink 
 
-// function for drink rating
 
 // function for recommended drink
 
