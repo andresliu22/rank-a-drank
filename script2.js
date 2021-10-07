@@ -112,8 +112,33 @@ function suggestDrink(rating) {
                 })
             }
         })
+    } else {
+        switch (ingredient) {
+            case "vodka", "rum", "gin", "tequila":
+                ingredient = "whiskey"
+                break;
+
+            case "whiskey", "scotch", "brandy", "triple sec":
+                ingredient = "rum"
+                break;
+
+            default:
+                ingredient = "vodka"
+                break;
+
+        }
     }
 }
+
+/*
+vodka --> give them: whiskey
+gin: --> give them: whiskey
+rum: --> give them: whiskey
+tequila: --> give them: whiskey
+triple sec: --> give them: rum
+whiskey: --> give them: rum
+scotch: --> give them: rum
+brandy: --> give them: rum */
 
 function displaySuggestDrink(drink) {
     var card = $('<a>')
