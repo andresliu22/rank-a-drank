@@ -1,10 +1,14 @@
 var currentDrinkEl = $('#chosen-drink-card');
 var submitRatingBtn = $('#submitRating');
 var suggestedDrinkEl = $('#suggested-drink-card');
-var ingredient
+var ingredient;
+var currentLat;
+var currentLon;
+var yelpApiKey = "XGPJzdsArujs0a5GBLbAgRXVjA0Ht8qthqX-MLFDM0pckAYtxRSmRcJCodfZ9Yxk9WsRQt7Isno_i1ZOlRrlEDY7laqvOLzkb23nclEnir1HfZkyAPxi8jOkwAZfYXYx";
 
 $(document).ready(function () {
     getChosenDrink();
+    getLocation();
 });
 
 function getChosenDrink() {
@@ -149,6 +153,40 @@ function displaySuggestDrink(drink) {
 
     suggestedDrinkEl.append(card);
 }
+
+// Get Current Location courtesy of w3shools
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else { 
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+  
+function showPosition(position) {
+    currentLat = position.coords.latitude;
+    currentLon = position.coords.longitude;
+    console.log("Lat:" + currentLat + ", Lon:" + currentLon);
+}
+
+function getNearbySuggestions() {
+
+    var url = "https://api.yelp.com/v3/autocomplete?text=del&latitude=" + currentLat +"&longitude=" + currentLon;
+    fetch(url, {
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer' + yelpApiKey
+        }
+    }).then(function(response) {
+        if (response.ok) {
+            response.json().then(function(data) {
+                console.log(data);
+            })
+        }
+    });
+}
+
+
 submitRatingBtn.on("click", submitRating);
 
 
