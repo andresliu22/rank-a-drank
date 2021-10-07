@@ -26,13 +26,8 @@ Second column: One suggest (featured) drink suggestion based on their rating.
 
 Persistant Data: Local Storage
 
-API's: 
-Google Places - https://developers.google.com/maps/documentation/javascript/places 
-*Yelp Fusion API* - https://www.yelp.com/fusion
-Cocktails API - https://www.thecocktaildb.com/api.php
-*Optional Feature* Uber API - Suggesting 
 
-Instead of Bootstrap:  http://getskeleton.com/
+This app will have the user input or “check-in”/log their drink as they enjoy it.  They will then be able to rate that drink (out of 5 stars).  This data will be saved in their dashboard and sorted in descending order: from favorite drinks (5 stars) shown first to less-enjoyable (1 star) drinks.  They will also be presented with recommendations after each new logged rating:  they will receive a recommendation for a different drink they may enjoy, based on the rating they provided, and will get a list of 3 nearby venues for where they can “keep the party going” and try a new selection.
 
 ## Built With
 
