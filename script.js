@@ -3,6 +3,12 @@ var nameInputEl = $('#drinkInput');
 var ingredientInputEl = $('#ingredientInput');
 var submitBtnEl = $('#drinkSubmit');
 var switchBtnEl = $('#switchBtn');
+var currentLat;
+var currentLon;
+
+$(document).ready(function() {
+    getLocation();
+})
 
 function submitDrink(event) {
     event.preventDefault()
@@ -87,6 +93,21 @@ function switchInput(event) {
 
 function drinkRating(event) {
 
+}
+
+// Get Current Location courtesy of w3shools
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  currentLat = position.coords.latitude;
+  currentLon = position.coords.longitude;
+  console.log("Lat:" + currentLat + ", Lon:" + currentLon);
 }
 
 $("#drinks-card").on("click", ".card", drinkRating);

@@ -1,5 +1,6 @@
 var currentDrinkEl = $('#chosen-drink-card');
 var submitRatingBtn = $('#submitRating');
+var suggestedDrinkEl = $('#suggested-drink-card');
 var ingredient
 
 $(document).ready(function () {
@@ -132,10 +133,11 @@ function suggestDrink(rating) {
 }
 
 function displaySuggestDrink(drink) {
+    suggestedDrinkEl.empty();
     var card = $('<a>')
     card.addClass("card");
     card.attr("href", "index2.html?drink=" + drink.strDrink);
-    card.css({ "flex": "1 0 300px", "margin": "10px" })
+    card.css({ "width": "500px", "margin": "10px" })
     var cardHeader = $('<div>');
     cardHeader.addClass("card-divider");
     var cardImg = $('<img>');
@@ -145,7 +147,7 @@ function displaySuggestDrink(drink) {
     card.append(cardImg);
 
 
-    $('#suggested-drink-card').append(card);
+    suggestedDrinkEl.append(card);
 }
 submitRatingBtn.on("click", submitRating);
 
