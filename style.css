@@ -41,3 +41,7 @@ h1 {
 .locationSuggest {
 
 }
+
+.checked {
+    color: gold;
+}
