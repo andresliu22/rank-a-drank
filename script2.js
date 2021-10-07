@@ -190,9 +190,20 @@ function getNearbySuggestions() {
     });
 }
 
+function displayMap() {
+    var apiUrl = "http://www.mapquestapi.com/geocoding/v1/batch?key=u1CqLkL4TtGYm7gJkTYRUEHkXQY1Mkyj&location=30.333472,-81.470448&includeRoadMetadata=true&includeNearestIntersection=true&thumbMaps=true"
+    fetch(apiUrl).then(function (response) {
+        if (response.ok) {
+            response.json().then(function (data) {
+                console.log(data);
+            })
+        }
+    })
+}
+
 
 submitRatingBtn.on("click", submitRating);
-nearbyLocationBtn.on("click", getNearbySuggestions);
+nearbyLocationBtn.on("click", displayMap);
 
 
 
