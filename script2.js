@@ -5,6 +5,7 @@ var ingredient;
 var currentLat;
 var currentLon;
 var yelpApiKey = "XGPJzdsArujs0a5GBLbAgRXVjA0Ht8qthqX-MLFDM0pckAYtxRSmRcJCodfZ9Yxk9WsRQt7Isno_i1ZOlRrlEDY7laqvOLzkb23nclEnir1HfZkyAPxi8jOkwAZfYXYx";
+var nearbyLocationBtn = $('#nearbyLocationBtn');
 
 $(document).ready(function () {
     getChosenDrink();
@@ -171,8 +172,11 @@ function showPosition(position) {
 
 function getNearbySuggestions() {
 
-    var url = "https://api.yelp.com/v3/autocomplete?text=del&latitude=" + currentLat +"&longitude=" + currentLon;
+    //var url = "https://api.yelp.com/v3/autocomplete?text=del&latitude=" + currentLat +"&longitude=" + currentLon;
+    var url = "https://api.yelp.com/v3/transactions/delivery/search?latitude=37.786882&longitude=-122.399972"
     fetch(url, {
+        method: 'GET', // *GET, POST, PUT, DELETE, etc.
+        mode: 'no-cors', // no-cors, *cors, same-origin
         headers: {
           'Content-Type': 'application/json',
           'Authorization': 'Bearer' + yelpApiKey
@@ -188,6 +192,7 @@ function getNearbySuggestions() {
 
 
 submitRatingBtn.on("click", submitRating);
+nearbyLocationBtn.on("click", getNearbySuggestions);
 
 
 
