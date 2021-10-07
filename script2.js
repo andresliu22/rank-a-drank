@@ -1,12 +1,29 @@
-var currentDrinkEl = $('#chosen-drink-card')
-var drinkSuggestEl = $('#drink-suggest-card')
-var locationSuggestEl = $('#location-suggest-card')
+var currentDrinkEl = $('#chosen-drink-card');
+var submitRatingBtn = $('#submitRating');
 
 $(document).ready(function () {
-    chosenDrink();
+    getChosenDrink();
 });
 
-function currentDrink(data) {
+function getChosenDrink() {
+    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    var drink = hashes[0].split('=');
+    var drinkName = drink[1].replace('%20', ' ');
+
+    if (drinkName !== "") {
+        var searchCocktailByNameAPI = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + drinkName;
+        fetch(searchCocktailByNameAPI).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (data) {
+                    console.log(data);
+                    displayChosenDrink(data);
+                })
+            }
+        })
+    }
+}
+
+function displayChosenDrink(data) {
     var drinks = data.drinks;
     for (var i = 0; i < drinks.length; i++) {
         console.log(drinks[i]);
@@ -39,30 +56,11 @@ function currentDrink(data) {
     }
 }
 
-function chosenDrink() {
-    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-    var drink = hashes[0].split('=');
-    var drinkName = drink[1].replace('%20', ' ');
-
-    if (drinkName !== "") {
-        var searchCocktailByNameAPI = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + drinkName;
-        fetch(searchCocktailByNameAPI).then(function (response) {
-            if (response.ok) {
-                response.json().then(function (data) {
-                    console.log(data);
-                    currentDrink(data);
-                })
-            }
-        })
-    }
-}
-
 function rateDrink(event) {
     // console.log(event.target.className);
     var starRating = event.target.className.slice(event.target.className.indexOf('star-') + 5)[0];
     // console.log(starRating)
     for (var i=0; i<5; i++) {
-
         if (i < starRating) {
             $('.star-' + (i + 1)).addClass('checked');
         } else {
@@ -71,9 +69,36 @@ function rateDrink(event) {
     }
 }
 
+function submitRating() {
+    var starsChecked = $('.checked');
+    
+    if (starsChecked.length > 0) {
+
+        if (JSON.parse(localStorage.getItem("ratedDrinks")) !== null) {
+            var ratedDrinks = JSON.parse(localStorage.getItem("ratedDrinks"));
+        } else {
+            var ratedDrinks = []
+        }
+
+        var drinkObj = {
+            name: $(".card-divider").text(),
+            rating: starsChecked.length
+        }
+        for (var i = 0; i < ratedDrinks.length; i++) {
+            if (ratedDrinks[i].name === drinkObj.name) {
+                ratedDrinks[i].rating = drinkObj.rating;
+                localStorage.setItem("ratedDrinks", JSON.stringify(ratedDrinks));
+                return;
+            } 
+        }
+        ratedDrinks.push(drinkObj);
+        localStorage.setItem("ratedDrinks", JSON.stringify(ratedDrinks));
+    }
+}
 
 
-//$('.startBtn').on("click", rateDrink);
+
+submitRatingBtn.on("click", submitRating);
 
 // function for current drink 
 
