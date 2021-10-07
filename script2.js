@@ -179,7 +179,7 @@ function getNearbySuggestions() {
         mode: 'no-cors', // no-cors, *cors, same-origin
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': 'Bearer' + yelpApiKey
+          'Authorization': 'Bearer XGPJzdsArujs0a5GBLbAgRXVjA0Ht8qthqX-MLFDM0pckAYtxRSmRcJCodfZ9Yxk9WsRQt7Isno_i1ZOlRrlEDY7laqvOLzkb23nclEnir1HfZkyAPxi8jOkwAZfYXYx'
         }
     }).then(function(response) {
         if (response.ok) {
