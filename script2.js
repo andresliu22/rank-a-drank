@@ -101,18 +101,8 @@ function submitRating() {
 }
 
 function suggestDrink(rating) {
-    if (rating >= 3) {
-        var searchCocktailByIngredientAPI = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + ingredient;
-        fetch(searchCocktailByIngredientAPI).then(function (response) {
-            if (response.ok) {
-                response.json().then(function (data) {
-                    console.log(data);
-                    var randomDrink = data.drinks[Math.floor(Math.random() * data.drinks.length)];
-                    displaySuggestDrink(randomDrink);
-                })
-            }
-        })
-    } else {
+
+    if (rating < 3) {
         switch (ingredient) {
             case "vodka", "rum", "gin", "tequila":
                 ingredient = "whiskey"
@@ -128,17 +118,18 @@ function suggestDrink(rating) {
 
         }
     }
+    
+    var searchCocktailByIngredientAPI = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + ingredient;
+    fetch(searchCocktailByIngredientAPI).then(function (response) {
+        if (response.ok) {
+            response.json().then(function (data) {
+                console.log(data);
+                var randomDrink = data.drinks[Math.floor(Math.random() * data.drinks.length)];
+                displaySuggestDrink(randomDrink);
+            })
+        }
+    })
 }
-
-/*
-vodka --> give them: whiskey
-gin: --> give them: whiskey
-rum: --> give them: whiskey
-tequila: --> give them: whiskey
-triple sec: --> give them: rum
-whiskey: --> give them: rum
-scotch: --> give them: rum
-brandy: --> give them: rum */
 
 function displaySuggestDrink(drink) {
     var card = $('<a>')
