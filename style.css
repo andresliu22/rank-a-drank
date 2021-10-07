@@ -3,45 +3,44 @@
 }
 
 h1 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#drinkChoice {
 
 }
 
-.inputContainer {
+#drinkInput {
+display: inline-flex;
+width: 30%;
+}
+
+#ingrediantInput {
+display: inline-flex;
+width: 30%;
+}
+
+#drinkSumbit {
 
 }
 
-.drinkChoice {
-
+#switchBtn {
+position: relative;
 }
 
-.drinkInput {
-
+.drinks-card {
+    display: inline-flex;
+    width: 30%;
+    border-width: 2px;
+    border-style: solid;
+   
+    
 }
 
-.drinkSubmit {
-
+.card-divider {
+    background-color: white;
 }
 
-.drinkResults {
-
-}
-
-.ratingsContainer {
-
-}
-
-.modalMsg {
-
-}
-
-.drinkSuggest {
-
-}
-
-.locationSuggest {
-
-}
-
-.checked {
-    color: gold;
+.card-section {
+    background-color: #e9bd2f;
 }
