@@ -18,48 +18,50 @@
 </head>
 
 <body>
-    <header>
-        <div class="logo">
-            <img src="./assets/images/transparent-logo.png" alt="logo">
-            <h1>Rank-A-Drank</h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="./index.html">Home</a></li>
-                <li><a href="./dashboard.html">Dashboard</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <main class="grid-container">
-        <div class="container">
-            <div class="inputdiv">
-
-                <form class="drinkChoice" id="drinkChoice" data-parsley-validate>
-
-                    <label for="drinkname"></label>
-
-                    <input type="text" class="form-control" id="drinkInput" name="drinkname" required
-                        placeholder="Type your Drink...">
-                    <input type="text" id="ingredientInput" placeholder="Type the Ingredient..." style="display: none;">
-
-
-                    <input type="submit" class="button drinkSubmit btn btn-default" id="drinkSubmit"
-                        value="Submit"></input>
-
-                    <button type="submit" class="button success switchBtn" id="switchBtn">Search by Ingredient</button>
-
-                </form>
+    <main>
+        <header>
+            <div class="logo">
+                <img src="./assets/images/transparent-logo.png" alt="logo">
+                <h1>Rank-A-Drank</h1>
             </div>
-            <div class="drinks-card" id="drinks-card" style="display: flex; flex-wrap: wrap;"></div>
+            <nav>
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./dashboard.html">Dashboard</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <div class="drink-content grid-container">
+            <div class="container">
+                <div class="inputdiv">
+    
+                    <form class="drinkChoice" id="drinkChoice" data-parsley-validate>
+    
+                        <label for="drinkname"></label>
+    
+                        <input type="text" class="form-control" id="drinkInput" name="drinkname" required
+                            placeholder="Type your Drink...">
+                        <input type="text" id="ingredientInput" placeholder="Type the Ingredient..." style="display: none;">
+    
+    
+                        <input type="submit" class="button drinkSubmit btn btn-default" id="drinkSubmit"
+                            value="Submit"></input>
+    
+                        <button type="submit" class="button success switchBtn" id="switchBtn">Search by Ingredient</button>
+    
+                    </form>
+                </div>
+                <div class="drinks-card" id="drinks-card" style="display: flex; flex-wrap: wrap;"></div>
+            </div>
+    
         </div>
-
+        <div id="content-wrap"></div>
+        <footer>
+            <p class="made-by">Made with ❤ by Alec, Kiri & Andres</p>
+            <p>© 2021 All Rights Reserved</p>
+        </footer>
     </main>
-    <footer>
-        <p class="made-by">Made with ❤ by Alec, Kiri & Andres</p>
-        <p>© 2021 All Rights Reserved</p>
-    </footer>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
