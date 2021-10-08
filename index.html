@@ -23,27 +23,16 @@
             <img class="logo" src="">
         </header>
         <div class="inputdiv">
-            <form class="drinkChoice" id="drinkChoice">
-                <input type="text" id="drinkInput" autocomplete="on" placeholder="Type your Drink...">
+            <form class="drinkChoice" id="drinkChoice" data-parsley-validate>
+                <input type="text" id="drinkInput" autocomplete="on" placeholder="Type your Drink..." required="">
                 <input type="text" id="ingredientInput" placeholder="Type the Ingredient..." style="display: none;">
                 <button class="button drinkSubmit" id="drinkSubmit">Submit</button>
                 <button class="button success switchBtn" id="switchBtn">Search by Ingredient</button>
             </form>
-
+            
         </div>
 
         <div class="drinks-card" id="drinks-card" style="display: flex; flex-wrap: wrap;">
-            <!-- <div class="card" style="width: 300px; margin: 10px;">
-                <div class="card-divider">
-                  This is a header
-                </div>
-                <img src="">
-                <div class="card-section">
-                  <h4>This is a card.</h4>
-                  <p>It has an easy to override visual style, and is appropriately subdued.</p>
-                </div>
-              </div> -->
-              
         </div>
         
         <footer></footer>
@@ -54,6 +43,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" type="text/javascript"></script>
+    <script src="http://parsleyjs.org/dist/parsley.min.js" type="text/javascript"></script>
     <!-- Compressed JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->

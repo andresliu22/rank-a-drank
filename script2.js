@@ -179,7 +179,7 @@ function getNearbySuggestions() {
         mode: 'no-cors', // no-cors, *cors, same-origin
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': 'Bearer' + yelpApiKey
+          'Authorization': 'Bearer XGPJzdsArujs0a5GBLbAgRXVjA0Ht8qthqX-MLFDM0pckAYtxRSmRcJCodfZ9Yxk9WsRQt7Isno_i1ZOlRrlEDY7laqvOLzkb23nclEnir1HfZkyAPxi8jOkwAZfYXYx'
         }
     }).then(function(response) {
         if (response.ok) {
@@ -190,9 +190,20 @@ function getNearbySuggestions() {
     });
 }
 
+function displayMap() {
+    var apiUrl = "http://www.mapquestapi.com/geocoding/v1/batch?key=u1CqLkL4TtGYm7gJkTYRUEHkXQY1Mkyj&location=30.333472,-81.470448&includeRoadMetadata=true&includeNearestIntersection=true&thumbMaps=true"
+    fetch(apiUrl).then(function (response) {
+        if (response.ok) {
+            response.json().then(function (data) {
+                console.log(data);
+            })
+        }
+    })
+}
+
 
 submitRatingBtn.on("click", submitRating);
-nearbyLocationBtn.on("click", getNearbySuggestions);
+nearbyLocationBtn.on("click", displayMap);
 
 
 

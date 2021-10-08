@@ -4,6 +4,10 @@ var ingredientInputEl = $('#ingredientInput');
 var submitBtnEl = $('#drinkSubmit');
 var switchBtnEl = $('#switchBtn');
 
+$(function () {
+    $('#drinkChoice').parsley();
+});
+
 function submitDrink(event) {
     event.preventDefault()
 
@@ -92,4 +96,4 @@ function drinkRating(event) {
 $("#drinks-card").on("click", ".card", drinkRating);
 
 switchBtnEl.on("click", switchInput);
-submitBtnEl.on("click", submitDrink);
+formEl.on("click", submitDrink);
