@@ -1,6 +1,6 @@
 # drink-rating-app
 
-For this project we used HTML, CSS, Javascript, existing third-party API’s and server side API’s to create an app with a dynamic user interface. This app allows users to try a drink at a specific location, rate that drink, provide their location, and will generate nearby venues and personalized drink suggestions.
+For this project we used HTML, CSS, Javascript, existing third-party API’s and server side API’s to create an app with a dynamic user interface. We researched and utilized a variety of technologies (listed below) in order to make the app interactive, purposeful and asthetically pleasing. This app allows users to try a drink at a specific location, rate that drink, provide their location, and will generate nearby venues and personalized drink suggestions.
 
 ##
 
@@ -8,13 +8,13 @@ For this project we used HTML, CSS, Javascript, existing third-party API’s and
 
 This app will allow a user to input or “check-in” a mixed-drink as they enjoy it.  They will then be able to rate that drink (out of 5 stars).  After submitting their rating, they will also be presented with personalized recommendations.  They will receive a recommendation for a different drink they may enjoy, based on the rating they provided. They will also see a list of 3 nearby venues so they can “keep the party going” and try a new selection.
 
-## Future Developments
-
-This data will be saved in their dashboard and sorted in descending order: from favorite drinks (5 stars) shown first to less-enjoyable (1 star) drinks.  
-
 ## User Stories
 
 <img src="DrinkAppUserStories.JPG" alt="Screenshot of User Stories">
+
+## Future Developments
+
+This data will be saved in their dashboard and sorted in descending order: from favorite drinks (5 stars) shown first to less-enjoyable (1 star) drinks.  
 
 ## Built With
 
@@ -39,8 +39,8 @@ This data will be saved in their dashboard and sorted in descending order: from 
 
 ## Authors
 
-* Andres Liu []
-* Alec Mackenzie []
+* Andres Liu [https://www.linkedin.com/in/andresliu22/]
+* Alec Mackenzie [https://www.linkedin.com/in/alec-mackenzie-5119a5b8/]
 * Kiri Smith [https://www.linkedin.com/in/kiri-lynne-smith/]
 
 
