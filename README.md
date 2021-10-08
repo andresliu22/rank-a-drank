@@ -25,6 +25,14 @@ This app will allow a user to input or “check-in” a mixed-drink as they enjo
 *[Geolocation API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API) - to enable location services upon page load
 * [Yelp API](https://www.yelp.com/developers) - to locate nearby venues (bars, restaurants, and liquor stores) based on the user's location
 
+## App Visual
+
+<img src="assets\images\AppSnip.JPG" alt="Screenshot of App search"> 
+
+## See it in Action!
+
+* [https://amackenzie26.github.io/drink-rating-app/](#)
+
 ## Deployed Link
 
 * [https://amackenzie26.github.io/drink-rating-app/](#)
