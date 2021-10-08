@@ -11,8 +11,13 @@ This app will allow a user to input or “check-in” a mixed-drink as they enjo
 <img src="DrinkAppUserStories.JPG" alt="Screenshot of User Stories">
 
 ## Future Developments
-
-This data will be saved in their dashboard and sorted in descending order: from favorite drinks (5 stars) shown first to less-enjoyable (1 star) drinks.  
+* Add dashboard feature where rated drinks are saved to the user's dashboard and listed in descending order from favorite drinks (5 stars) shown first to less-enjoyable (1 star) drinks
+* Update storage to a system where ratings can be submitted globally and the average rating (of all users) for each drink will appear beneath the thumbnail of the drink
+* Add social media component where users can follow one another, react and comment on each other's drink check-ins, and send meet-up invites for local venues
+* Enable check-in services at local bars and restaurants where the user can tag the location where they are enjoying their drink and even provide a shout-out to the bartender who created the cocktail
+* Provide photo-capabilities so that users can take a picture of their drink and submit it globally with their rating
+* Create badges (awards/accomplishments) that users can earn by checking in drinks based on a variety of criteria and displaying these badges to their dashboard timeline -- ie: "The Trailblazer" badge:  "Congrats!  You were the first to check-in this drink at this location!  Don't forget to leave a review."
+  
 
 ## Built With
 
