@@ -3,7 +3,9 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 0% 2%;
-    color: #ffa974;
+    color: white;
+    background-color: #F84F8B;
+    margin-top: 5px;
 }
   
 header .logo img {
