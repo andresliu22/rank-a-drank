@@ -3,18 +3,28 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 0% 2%;
-    color: #ffa974;
+    color: white;
+    background-color: #F84F8B;
+    margin-top: 5px;
 }
+
   
 header .logo img {
     height: 120px;
+    position: static;
+}
+
+h1 {
+    margin-right: 530px;
+    margin-top: 5px;
 }
 
 nav {
-    background-color: white;
+    background-color: #F84F8B;
     border-style: none;
     width: 300px;
     box-shadow: none;
+    margin-top: 5px;
 }
 nav ul {
     display: flex !important;
@@ -24,7 +34,7 @@ nav ul {
 }
 
 nav a {
-    color: #ffa974 !important;
+    color: #F4A022 !important;
     font-weight: bold !important;
     text-decoration: none !important;
     font-size: 24px !important;
@@ -35,10 +45,15 @@ h1 {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+#drinkChoice {
+    margin-top: 20px;
+}
+
 #drinkInput {
     display: block;
     position: static;
     width: 50%;
+
 }
 
 #ingredientInput {
@@ -61,7 +76,7 @@ h1 {
 
 .drinks-card {
     border-width: 2px;
-    /* filter: drop-shadow(5px 5px 5px #B94A48); */
+    filter: drop-shadow(5px 5px 5px #B94A48);
 }
 
 .card {
@@ -82,7 +97,7 @@ h1 {
 }
 
 .checked {
-    color: blue;
+    color: #FF1616;
 }
 
 input.parsley-success,
@@ -126,4 +141,9 @@ a.card, a.card:hover, a.card:focus, a.card:active {
 
 @media screen {
     
+}
+
+h5 {
+    margin-top: 10px;
+    margin-left: 20px;
 }
