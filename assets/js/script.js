@@ -8,11 +8,11 @@ $(function () {
     $('#drinkChoice').parsley();
 });
 
-/*$(function () {
-    if ('#drinkInput' = '') {
-        $('#drinkChoice').parsley();
-    }
-});*/
+// $(function () {
+//     if ($('#drinkInput').val() == "") {
+//         $('#drinkChoice').parsley();
+//     }
+// });
 
 function submitDrink(event) {
     //event.preventDefault()
@@ -45,9 +45,9 @@ function submitDrink(event) {
                 })
             }
         })
+        nameInputEl.val('');
+        ingredientInputEl.val('');
     }
-    nameInputEl.val('');
-    ingredientInputEl.val('');
 }
 
 

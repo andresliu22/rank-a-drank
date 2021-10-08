@@ -87,9 +87,9 @@ function displayDrinkInfo(data) {
         numberOfIngredient = "strIngredient" + count;
     }
 
-    drinkInfoEl.append($('<h4>Instructions</h4>'));
+    drinkInfoEl.append($('<h4>Instructions:</h4>'));
     drinkInfoEl.append(p);
-    drinkInfoEl.append($('<h4>Ingredients</h4>'))
+    drinkInfoEl.append($('<h4>Ingredients:</h4>'))
     drinkInfoEl.append(ul);
 
 
@@ -167,6 +167,8 @@ function suggestDrink(rating) {
 
 function displaySuggestDrink(drink) {
     suggestedDrinkEl.empty();
+    var h4 = $('<h4>');
+    h4.text('Suggested Drink:');
     var card = $('<a>')
     card.addClass("card");
     card.attr("href", "cocktail.html?drink=" + drink.strDrink);
@@ -179,6 +181,7 @@ function displaySuggestDrink(drink) {
 
     card.append(cardHeader);
     card.append(cardImg);
+    suggestedDrinkEl.append(h4);
     suggestedDrinkEl.append(card);
 }
 
