@@ -12,21 +12,31 @@ h1 {
 
 #drinkInput {
 display: inline-flex;
+position: static;
 width: 30%;
 }
 
 #ingrediantInput {
 display: inline-flex;
+position: static;
 width: 30%;
 }
 
+#drinkSubmit {
+top: 0;
+left: 0;
+display: block;
+}
+
 #switchBtn {
-position: relative;
+  top: 0;
+  left: 0;
+  display: block;
 }
 
 .drinks-card {
     border-width: 2px;
-    
+    filter: drop-shadow(10px 10px 10px blue);   
 }
 
 .card {
@@ -35,6 +45,7 @@ position: relative;
     border-width: 2px;
     border-radius: 20px;
     border-color: black;
+    filter: drop-shadow(5px 5px 5px gold);
 }
 
 .card-divider {
