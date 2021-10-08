@@ -46,10 +46,15 @@ h1 {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+#drinkChoice {
+    margin-top: 20px;
+}
+
 #drinkInput {
     display: block;
     position: static;
     width: 50%;
+
 }
 
 #ingredientInput {
