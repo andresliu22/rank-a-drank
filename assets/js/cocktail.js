@@ -67,7 +67,7 @@ function displayChosenDrink(data) {
 
 function displayDrinkInfo(data) {
     var drink = data.drinks[0];
-    
+
     console.log(drink);
     var p = $('<p>');
     p.text(drink.strInstructions);
@@ -78,9 +78,9 @@ function displayDrinkInfo(data) {
     var count = 1;
     var numberOfIngredient = "strIngredient" + count;
 
-    while(drink[numberOfIngredient] != null) {
+    while (drink[numberOfIngredient] != null) {
         var li = $('<li>')
-        li.css({"list-style-type": "disclosure-closed"});
+        li.css({ "list-style-type": "disclosure-closed" });
         li.text(drink[numberOfIngredient]);
         ul.append(li);
         count++;
@@ -92,7 +92,7 @@ function displayDrinkInfo(data) {
     drinkInfoEl.append($('<h4>Ingredients</h4>'))
     drinkInfoEl.append(ul);
 
-    
+
 }
 
 function rateDrink(event) {
@@ -186,11 +186,11 @@ function displaySuggestDrink(drink) {
 function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition);
-    } else { 
+    } else {
         x.innerHTML = "Geolocation is not supported by this browser.";
     }
 }
-  
+
 function showPosition(position) {
     currentLat = position.coords.latitude;
     currentLon = position.coords.longitude;
@@ -200,26 +200,26 @@ function showPosition(position) {
 
 function getNearbySuggestions() {
     var url =
-      "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=cocktail&latitude=37.786882&longitude=-122.399972";
-    
+        "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=cocktail&latitude=37.786882&longitude=-122.399972";
+
     // https://cors-anywhere.herokuapp.com/corsdemo
-    
-      fetch(url, {
-      method: "GET", // *GET, POST, PUT, DELETE, etc.
-      // mode: "no-cors", // no-cors, *cors, same-origin
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: "Bearer " + yelpApiKey,
-      },
+
+    fetch(url, {
+        method: "GET", // *GET, POST, PUT, DELETE, etc.
+        // mode: "no-cors", // no-cors, *cors, same-origin
+        headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + yelpApiKey,
+        },
     }).then(function (response) {
-      if (response.ok) {
-        response.json().then(function (data) {
-          console.log(data);
-          displaySuggestedLocations(data.businesses);
-        });
-      }
+        if (response.ok) {
+            response.json().then(function (data) {
+                console.log(data);
+                displaySuggestedLocations(data.businesses);
+            });
+        }
     });
-  }
+}
 
 function fetchLocationSuggestions() {
     var apiUrl = "http://www.mapquestapi.com/geocoding/v1/batch?key=u1CqLkL4TtGYm7gJkTYRUEHkXQY1Mkyj&location=30.333472,-81.470448&includeRoadMetadata=true&includeNearestIntersection=true&thumbMaps=true"
@@ -237,14 +237,14 @@ function displaySuggestedLocations(locations) {
     var h4 = $('<h4>');
     h4.text("Suggested Locations");
     li.append(h4);
-    
+
     $('.collection').append(li);
 
     for (var i = 0; i < 5; i++) {
         var li = $('<li class="collection-item">');
         var div = $('<div>');
         div.text(locations[i].name + " - " + locations[i].location.display_address[0] + ", " + locations[i].location.display_address[1]);
-        
+
         var a = $('<a class="secondary-content">');
         var mapUrl = "https://maps.google.com/maps?q=" + locations[i].coordinates.latitude + "," + locations[i].coordinates.longitude + "&hl=es;z=14&amp;output=embed";
         a.attr("href", mapUrl);
@@ -263,9 +263,3 @@ submitRatingBtn.on("click", submitRating);
 nearbyLocationBtn.on("click", getNearbySuggestions);
 
 
-
-// api for location info (google map)
-
-// api fetch for location suggestion (yelp)
-
-// function for location suggestion

@@ -8,8 +8,14 @@ $(function () {
     $('#drinkChoice').parsley();
 });
 
+/*$(function () {
+    if ('#drinkInput' = '') {
+        $('#drinkChoice').parsley();
+    }
+});*/
+
 function submitDrink(event) {
-    event.preventDefault()
+    //event.preventDefault()
 
     $('#drinks-card').empty();
     var drink = nameInputEl.val();
@@ -39,11 +45,11 @@ function submitDrink(event) {
                 })
             }
         })
-        nameInputEl.val('');
-        ingredientInputEl.val('');
     }
-
+    nameInputEl.val('');
+    ingredientInputEl.val('');
 }
+
 
 function displayDrinks(data) {
     var drinks = data.drinks;
@@ -88,9 +94,11 @@ function switchInput(event) {
     }
 }
 
+
 function drinkRating(event) {
 
 }
+
 
 $("#drinks-card").on("click", ".card", drinkRating);
 
