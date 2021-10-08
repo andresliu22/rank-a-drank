@@ -4,12 +4,10 @@ var ingredientInputEl = $('#ingredientInput');
 var submitBtnEl = $('#drinkSubmit');
 var switchBtnEl = $('#switchBtn');
 
-$(function () {
-    $('#drinkChoice').parsley();
-});
+
 
 function submitDrink(event) {
-    event.preventDefault()
+    //event.preventDefault()
 
     $('#drinks-card').empty();
     var drink = nameInputEl.val();
@@ -39,11 +37,14 @@ function submitDrink(event) {
                 })
             }
         })
-        nameInputEl.val('');
-        ingredientInputEl.val('');
     }
-
+    nameInputEl.val('');
+    ingredientInputEl.val('');
 }
+
+$(function () {
+    $('#drinkChoice').parsley();
+});
 
 function displayDrinks(data) {
     var drinks = data.drinks;

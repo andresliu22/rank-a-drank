@@ -1,4 +1,4 @@
-# drink-rating-app
+# Rank-A-Drank
 
 For this project we used HTML, CSS, Javascript, existing third-party API’s and server side API’s to create an app with a dynamic user interface. We researched and utilized a variety of technologies (listed below) in order to make the app interactive, purposeful and asthetically pleasing. We embraced a collaborative approach to the creation of this app by using pair programming. We maintained an organized task flow by utilizing Github's project cards, issue submissions and branch protection rules so that we could review and approve updates to the app.
 
@@ -8,16 +8,7 @@ This app will allow a user to input or “check-in” a mixed-drink as they enjo
 
 ## User Stories
 
-<img src="DrinkAppUserStories.JPG" alt="Screenshot of User Stories">
-
-## Future Developments
-* Add dashboard feature where rated drinks are saved to the user's dashboard and listed in descending order from favorite drinks (5 stars) shown first to less-enjoyable (1 star) drinks
-* Update storage to a system where ratings can be submitted globally and the average rating (of all users) for each drink will appear beneath the thumbnail of the drink
-* Add social media component where users can follow one another, react and comment on each other's drink check-ins, and send meet-up invites for local venues
-* Enable check-in services at local bars and restaurants where the user can tag the location where they are enjoying their drink and even provide a shout-out to the bartender who created the cocktail
-* Provide photo-capabilities so that users can take a picture of their drink and submit it globally with their rating
-* Create badges (awards/accomplishments) that users can earn by checking in drinks based on a variety of criteria and displaying these badges to their dashboard timeline -- ie: "The Trailblazer" badge:  "Congrats!  You were the first to check-in this drink at this location!  Don't forget to leave a review."
-  
+<img src="assets\images\DrinkAppUserStories.JPG" alt="Screenshot of User Stories">  
 
 ## Built With
 
@@ -34,18 +25,22 @@ This app will allow a user to input or “check-in” a mixed-drink as they enjo
 *[Geolocation API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API) - to enable location services upon page load
 * [Yelp API](https://www.yelp.com/developers) - to locate nearby venues (bars, restaurants, and liquor stores) based on the user's location
 
-
 ## Deployed Link
 
 * [https://amackenzie26.github.io/drink-rating-app/](#)
+
+## Future Developments
+* Add dashboard feature where rated drinks are saved to the user's dashboard and listed in descending order from favorite drinks (5 stars) shown first to less-enjoyable (1 star) drinks
+* Update storage to a system where ratings can be submitted globally and the average rating (of all users) for each drink will appear beneath the thumbnail of the drink
+* Add social media component where users can follow one another, react and comment on each other's drink check-ins, and send meet-up invites for local venues
+* Enable check-in services at local bars and restaurants where the user can tag the location where they are enjoying their drink and even provide a shout-out to the bartender who created the cocktail
+* Provide photo-capabilities so that users can take a picture of their drink and submit it globally with their rating
+* Create badges (awards/accomplishments) that users can earn by checking in drinks based on a variety of criteria and displaying these badges to their dashboard timeline -- ie: "The Trailblazer" badge:  "Congrats!  You were the first to check-in this drink at this location!  Don't forget to leave a review."
 
 ## Authors
 
 * Andres Liu [https://www.linkedin.com/in/andresliu22/]
 * Alec Mackenzie [https://www.linkedin.com/in/alec-mackenzie-5119a5b8/]
 * Kiri Smith [https://www.linkedin.com/in/kiri-lynne-smith/]
-
-
-Made with Luvv
 
 
