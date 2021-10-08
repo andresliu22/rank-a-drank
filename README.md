@@ -4,7 +4,7 @@ For this project we used HTML, CSS, Javascript, existing third-party API’s and
 
 ## App Overview
 
-This app will allow a user to input or “check-in” a mixed-drink as they enjoy it.  They will then be able to rate that drink (out of 5 stars).  After submitting their rating, they will also be presented with personalized recommendations.  They will receive a recommendation for a different drink they may enjoy, based on the rating they provided. They will also see a list of 3 nearby venues so they can “keep the party going” and try a new selection.
+This app will allow a user to input or “check-in” a mixed-drink as they enjoy it.  They will then be able to rate that drink (out of 5 stars).  After submitting their rating, they will also be presented with personalized recommendations.  They will receive a recommendation for a different drink they may enjoy, based on the rating they provided. They will also see a list of 3 nearby venues so they can “keep the party going” and try a new selection.  Finally, we created a dashboard where the user's drinks will be stored, with the ratings they provided, and displayed by favorite drink to least favorite drink.
 
 ## User Stories
 
@@ -39,7 +39,6 @@ This app will allow a user to input or “check-in” a mixed-drink as they enjo
 * [https://amackenzie26.github.io/drink-rating-app/](#)
 
 ## Future Developments
-* Add dashboard feature where rated drinks are saved to the user's dashboard and listed in descending order from favorite drinks (5 stars) shown first to less-enjoyable (1 star) drinks
 * Update storage to a system where ratings can be submitted globally and the average rating (of all users) for each drink will appear beneath the thumbnail of the drink
 * Add social media component where users can follow one another, react and comment on each other's drink check-ins, and send meet-up invites for local venues
 * Enable check-in services at local bars and restaurants where the user can tag the location where they are enjoying their drink and even provide a shout-out to the bartender who created the cocktail
