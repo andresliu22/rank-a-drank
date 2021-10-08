@@ -59,7 +59,7 @@ function displayDrinks(data) {
         var card = $('<a>')
         card.addClass("card");
         card.attr("href", "cocktail.html?drink=" + drinks[i].strDrink);
-        card.css({ "flex": "1 0 300px", "margin": "10px" })
+        card.css({ "flex": "0 1 300px", "margin": "10px" })
         var cardHeader = $('<div>');
         cardHeader.addClass("card-divider");
         var cardImg = $('<img>');

@@ -78,6 +78,7 @@ nav a {
 
 .drinks-card {
     border-width: 2px;
+    justify-content: center;
 }
 
 .card {
@@ -148,6 +149,9 @@ a.card, a.card:hover, a.card:focus, a.card:active {
     color: inherit;
 }
 
+button:focus {
+    background: none;
+}
 main {
     position: relative;
     min-height: 100vh;
