@@ -39,13 +39,13 @@ function displayChosenDrink(data) {
         console.log(drinks[i]);
         var card = $('<div>')
         card.addClass("card");
-        card.css({ "flex": "1 0 300px", "margin": "10px" })
+        card.css({ "flex": "0 1 300px", "margin": "10px" })
         var cardHeader = $('<div>');
         cardHeader.addClass("card-divider");
         var cardImg = $('<img>');
         var cardSection = $('<div>');
         cardSection.addClass("card-section");
-        ingredient = drinks[i].strIngredient1
+        ingredient = drinks[i].strIngredient1;
         cardHeader.text(drinks[i].strDrink);
         cardImg.attr("src", drinks[i].strDrinkThumb);
         for (var i = 0; i < 5; i++) {
@@ -78,7 +78,7 @@ function displayDrinkInfo(data) {
     var count = 1;
     var numberOfIngredient = "strIngredient" + count;
 
-    while (drink[numberOfIngredient] != null) {
+    while (drink[numberOfIngredient] != null && drink[numberOfIngredient] != "") {
         var li = $('<li>')
         li.css({ "list-style-type": "disclosure-closed" });
         li.text(drink[numberOfIngredient]);
@@ -172,7 +172,7 @@ function displaySuggestDrink(drink) {
     var card = $('<a>')
     card.addClass("card");
     card.attr("href", "cocktail.html?drink=" + drink.strDrink);
-    card.css({ "flex": "1 0 300px", "margin": "10px" })
+    card.css({ "flex": "0 1 300px", "margin": "10px" })
     var cardHeader = $('<div>');
     cardHeader.addClass("card-divider");
     var cardImg = $('<img>');
@@ -202,26 +202,32 @@ function showPosition(position) {
 
 
 function getNearbySuggestions() {
-    var url =
+
+    if (currentLat == null && currentLon == null) {
+        getLocation();
+    } else {
+        var url =
         "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=cocktail&latitude=" + currentLat + "&longitude=" + currentLon;
 
-    // https://cors-anywhere.herokuapp.com/corsdemo
+        // https://cors-anywhere.herokuapp.com/corsdemo
 
-    fetch(url, {
-        method: "GET", // *GET, POST, PUT, DELETE, etc.
-        // mode: "no-cors", // no-cors, *cors, same-origin
-        headers: {
-            "Content-Type": "application/json",
-            Authorization: "Bearer " + yelpApiKey,
-        },
-    }).then(function (response) {
-        if (response.ok) {
-            response.json().then(function (data) {
-                console.log(data);
-                displaySuggestedLocations(data.businesses);
-            });
-        }
-    });
+        fetch(url, {
+            method: "GET", // *GET, POST, PUT, DELETE, etc.
+            // mode: "no-cors", // no-cors, *cors, same-origin
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: "Bearer " + yelpApiKey,
+            },
+        }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (data) {
+                    console.log(data);
+                    displaySuggestedLocations(data.businesses);
+                });
+            }
+        });
+    }
+    
 }
 
 function fetchLocationSuggestions() {

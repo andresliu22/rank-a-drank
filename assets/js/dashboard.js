@@ -13,6 +13,10 @@ function displayDashboard() {
     }
     console.log(ratedDrinks)
 
+    ratedDrinks.sort(function (a, b) {
+        return b.rating - a.rating;
+    });
+
     var li = $('<li class="collection-header">');
     var h4 = $('<h4>');
     h4.text("Dashboard");
