@@ -13,12 +13,20 @@ header .logo img {
     position: static;
 }
 
+h1 {
+    margin-right: 530px;
+    margin-top: 5px;
+}
+
+
 nav {
-    background-color: white;
+    background-color: #F84F8B;
     border-style: none;
     width: 300px;
     box-shadow: none;
+    margin-top: 5px;
 }
+
 nav ul {
     display: flex !important;
     justify-content: space-between !important;
@@ -27,7 +35,7 @@ nav ul {
 }
 
 nav a {
-    color: #ffa974 !important;
+    color: #F4A022 !important;
     font-weight: bold !important;
     text-decoration: none !important;
     font-size: 24px !important;
