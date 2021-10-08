@@ -3,18 +3,18 @@ h1 {
 }
 
 #drinkInput {
-    display: inline-flex;
+    display: block;
     position: static;
-    width: 30%;
+    width: 50%;
 }
 
-#ingrediantInput {
-    display: inline-flex;
+#ingredientInput {
+    display: block;
     position: static;
-    width: 30%;
+    width: 50%;
 }
 
-#drinkSubmit {
+/* #drinkSubmit {
     top: 0;
     left: 0;
     display: block;
@@ -24,7 +24,7 @@ h1 {
     top: 0;
     left: 0;
     display: block;
-}
+} */
 
 .drinks-card {
     border-width: 2px;

@@ -1,11 +1,12 @@
 var currentDrinkEl = $('#chosen-drink-card');
 var submitRatingBtn = $('#submitRating');
 var suggestedDrinkEl = $('#suggested-drink-card');
+var yelpApiKey = "XGPJzdsArujs0a5GBLbAgRXVjA0Ht8qthqX-MLFDM0pckAYtxRSmRcJCodfZ9Yxk9WsRQt7Isno_i1ZOlRrlEDY7laqvOLzkb23nclEnir1HfZkyAPxi8jOkwAZfYXYx";
+var nearbyLocationBtn = $('#nearbyLocationBtn');
+var drinkInfoEl = $('#drinkInfo')
 var ingredient;
 var currentLat;
 var currentLon;
-var yelpApiKey = "XGPJzdsArujs0a5GBLbAgRXVjA0Ht8qthqX-MLFDM0pckAYtxRSmRcJCodfZ9Yxk9WsRQt7Isno_i1ZOlRrlEDY7laqvOLzkb23nclEnir1HfZkyAPxi8jOkwAZfYXYx";
-var nearbyLocationBtn = $('#nearbyLocationBtn');
 
 $(document).ready(function () {
     getChosenDrink();
@@ -25,12 +26,12 @@ function getChosenDrink() {
                 response.json().then(function (data) {
                     console.log(data);
                     displayChosenDrink(data);
+                    displayDrinkInfo(data);
                 })
             }
         })
     }
 }
-
 
 function displayChosenDrink(data) {
     var drinks = data.drinks;
@@ -38,7 +39,7 @@ function displayChosenDrink(data) {
         console.log(drinks[i]);
         var card = $('<div>')
         card.addClass("card");
-        card.css({ "width": '500px', "margin": "10px" })
+        card.css({ "width": '300px', "margin": "10px" })
         var cardHeader = $('<div>');
         cardHeader.addClass("card-divider");
         var cardImg = $('<img>');
@@ -64,10 +65,38 @@ function displayChosenDrink(data) {
     }
 }
 
+function displayDrinkInfo(data) {
+    var drink = data.drinks[0];
+    
+    console.log(drink);
+    var p = $('<p>');
+    p.text(drink.strInstructions);
+
+
+
+    var ul = $('<ul class="ingredientsList">');
+    var count = 1;
+    var numberOfIngredient = "strIngredient" + count;
+
+    while(drink[numberOfIngredient] != null) {
+        var li = $('<li>')
+        li.css({"list-style-type": "disclosure-closed"});
+        li.text(drink[numberOfIngredient]);
+        ul.append(li);
+        count++;
+        numberOfIngredient = "strIngredient" + count;
+    }
+
+    drinkInfoEl.append($('<h4>Instructions</h4>'));
+    drinkInfoEl.append(p);
+    drinkInfoEl.append($('<h4>Ingredients</h4>'))
+    drinkInfoEl.append(ul);
+
+    
+}
+
 function rateDrink(event) {
-    // console.log(event.target.className);
     var starRating = event.target.className.slice(event.target.className.indexOf('star-') + 5)[0];
-    // console.log(starRating)
     for (var i = 0; i < 5; i++) {
         if (i < starRating) {
             $('.star-' + (i + 1)).addClass('checked');
@@ -79,9 +108,7 @@ function rateDrink(event) {
 
 function submitRating() {
     var starsChecked = $('.checked');
-
     if (starsChecked.length > 0) {
-
         if (JSON.parse(localStorage.getItem("ratedDrinks")) !== null) {
             var ratedDrinks = JSON.parse(localStorage.getItem("ratedDrinks"));
         } else {
@@ -92,6 +119,7 @@ function submitRating() {
             name: $(".card-divider").text(),
             rating: starsChecked.length
         }
+
         for (var i = 0; i < ratedDrinks.length; i++) {
             if (ratedDrinks[i].name === drinkObj.name) {
                 ratedDrinks[i].rating = drinkObj.rating;
@@ -108,7 +136,6 @@ function submitRating() {
 }
 
 function suggestDrink(rating) {
-
     if (rating < 3) {
         switch (ingredient) {
             case "vodka", "rum", "gin", "tequila":
@@ -142,17 +169,16 @@ function displaySuggestDrink(drink) {
     suggestedDrinkEl.empty();
     var card = $('<a>')
     card.addClass("card");
-    card.attr("href", "index2.html?drink=" + drink.strDrink);
-    card.css({ "width": "500px", "margin": "10px" })
+    card.attr("href", "cocktail.html?drink=" + drink.strDrink);
+    card.css({ "width": "300px", "margin": "10px" })
     var cardHeader = $('<div>');
     cardHeader.addClass("card-divider");
     var cardImg = $('<img>');
     cardHeader.text(drink.strDrink);
     cardImg.attr("src", drink.strDrinkThumb);
+
     card.append(cardHeader);
     card.append(cardImg);
-
-
     suggestedDrinkEl.append(card);
 }
 
@@ -173,8 +199,6 @@ function showPosition(position) {
 
 
 function getNearbySuggestions() {
-    //var url = "https://api.yelp.com/v3/autocomplete?text=del&latitude=" + currentLat +"&longitude=" + currentLon;
-    // https://cors-anywhere.herokuapp.com/corsdemo
     var url =
       "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=cocktail&latitude=37.786882&longitude=-122.399972";
     fetch(url, {
@@ -249,7 +273,6 @@ function displaySuggestedLocations(locations) {
         a.append(iEl);
     }
 }
-
 
 submitRatingBtn.on("click", submitRating);
 nearbyLocationBtn.on("click", getNearbySuggestions);

@@ -10,29 +10,27 @@
     <!-- Compressed CSS -->
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <title>Drink Rating App</title>
 </head>
 
 <body>
-    
-
     <main class="grid-container">
         <header>
             <h1>Rank-A-Drank</h1>
-            <img class="logo" src="">
+            <img class="logo" src="./assets/images/logo.png" width="300px" height="300px">
         </header>
-        <div class="inputdiv">
-            <form class="drinkChoice" id="drinkChoice" data-parsley-validate>
-                <input type="text" id="drinkInput" autocomplete="on" placeholder="Type your Drink..." required="">
-                <input type="text" id="ingredientInput" placeholder="Type the Ingredient..." style="display: none;">
-                <button class="button drinkSubmit" id="drinkSubmit">Submit</button>
-                <button class="button success switchBtn" id="switchBtn">Search by Ingredient</button>
-            </form>
-            
-        </div>
 
-        <div class="drinks-card" id="drinks-card" style="display: flex; flex-wrap: wrap;">
+        <div class="container">
+            <div class="inputdiv">
+                <form class="drinkChoice" id="drinkChoice" data-parsley-validate>
+                    <input type="text" id="drinkInput" autocomplete="on" placeholder="Type your Drink..." required="">
+                    <input type="text" id="ingredientInput" placeholder="Type the Ingredient..." style="display: none;">
+                    <button class="button drinkSubmit" id="drinkSubmit">Submit</button>
+                    <button class="button success switchBtn" id="switchBtn">Search by Ingredient</button>
+                </form>
+            </div>
+            <div class="drinks-card" id="drinks-card" style="display: flex; flex-wrap: wrap;"></div>
         </div>
         
         <footer></footer>
@@ -48,7 +46,7 @@
     <!-- Compressed JavaScript -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
-    <script src="./script.js"></script>
+    <script src="./assets/js/script.js"></script>
     
 </body>
 </html>
