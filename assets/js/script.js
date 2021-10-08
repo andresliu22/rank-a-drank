@@ -4,7 +4,15 @@ var ingredientInputEl = $('#ingredientInput');
 var submitBtnEl = $('#drinkSubmit');
 var switchBtnEl = $('#switchBtn');
 
+$(function () {
+    $('#drinkChoice').parsley();
+});
 
+/*$(function () {
+    if ('#drinkInput' = '') {
+        $('#drinkChoice').parsley();
+    }
+});*/
 
 function submitDrink(event) {
     //event.preventDefault()
@@ -42,9 +50,6 @@ function submitDrink(event) {
     ingredientInputEl.val('');
 }
 
-$(function () {
-    $('#drinkChoice').parsley();
-});
 
 function displayDrinks(data) {
     var drinks = data.drinks;
@@ -89,9 +94,11 @@ function switchInput(event) {
     }
 }
 
+
 function drinkRating(event) {
 
 }
+
 
 $("#drinks-card").on("click", ".card", drinkRating);
 
