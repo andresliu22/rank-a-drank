@@ -1,11 +1,6 @@
 # drink-rating-app
 
-For this project we used HTML, CSS, Javascript, existing third-party API’s and server side API’s to create an app with a dynamic user interface. We researched and utilized a variety of technologies (listed below) in order to make the app interactive, purposeful and asthetically pleasing. We embraced a collaborative approach to the creation of this app and used pair programming
-
-We took turns “driving” while the other two “navigated” then would switch roles.
-
-We wanted our code to be a true team effort, where we would all be able to claim ownership over every aspect because we worked together to construct it. 
-
+For this project we used HTML, CSS, Javascript, existing third-party API’s and server side API’s to create an app with a dynamic user interface. We researched and utilized a variety of technologies (listed below) in order to make the app interactive, purposeful and asthetically pleasing. We embraced a collaborative approach to the creation of this app by using pair programming. We maintained an organized task flow by utilizing Github's project cards, issue submissions and branch protection rules so that we could review and approve updates to the app.
 
 ## App Overview
 
