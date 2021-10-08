@@ -8,8 +8,14 @@ $(function () {
     $('#drinkChoice').parsley();
 });
 
+/*$(function () {
+    if ('#drinkInput' = '') {
+        $('#drinkChoice').parsley();
+    }
+});*/
+
 function submitDrink(event) {
-    event.preventDefault()
+    //event.preventDefault()
 
     $('#drinks-card').empty();
     var drink = nameInputEl.val();
@@ -39,21 +45,20 @@ function submitDrink(event) {
                 })
             }
         })
-        nameInputEl.val('');
-        ingredientInputEl.val('');
     }
-
+    nameInputEl.val('');
+    ingredientInputEl.val('');
 }
 
-function displayDrinks(data) {
 
+function displayDrinks(data) {
     var drinks = data.drinks;
 
     for (var i = 0; i < drinks.length; i++) {
         console.log(drinks[i]);
         var card = $('<a>')
         card.addClass("card");
-        card.attr("href", "index2.html?drink=" + drinks[i].strDrink);
+        card.attr("href", "cocktail.html?drink=" + drinks[i].strDrink);
         card.css({ "flex": "1 0 300px", "margin": "10px" })
         var cardHeader = $('<div>');
         cardHeader.addClass("card-divider");
@@ -64,7 +69,7 @@ function displayDrinks(data) {
         cardHeader.text(drinks[i].strDrink);
         cardImg.attr("src", drinks[i].strDrinkThumb);
 
-        cardSection.append('<h4><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></h4>');
+        cardSection.append('<h4><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></h4>');
         card.append(cardHeader);
         card.append(cardImg);
         card.append(cardSection);
@@ -89,9 +94,11 @@ function switchInput(event) {
     }
 }
 
+
 function drinkRating(event) {
 
 }
+
 
 $("#drinks-card").on("click", ".card", drinkRating);
 

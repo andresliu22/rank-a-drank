@@ -36,7 +36,7 @@ display: block;
 
 .drinks-card {
     border-width: 2px;
-    filter: drop-shadow(10px 10px 10px blue);   
+    /* filter: drop-shadow(10px 10px 10px #B94A48);    */
 }
 
 .card {
@@ -45,7 +45,7 @@ display: block;
     border-width: 2px;
     border-radius: 20px;
     border-color: black;
-    filter: drop-shadow(5px 5px 5px gold);
+    filter: drop-shadow(5px 5px 5px #B94A48);
 }
 
 .card-divider {
