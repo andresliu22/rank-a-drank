@@ -178,4 +178,9 @@ footer .made-by {
         width: 350px;
     
     }
+
+    .collection-item div span {
+        margin-left:0px !important;
+        display: block;
+    }
 }
