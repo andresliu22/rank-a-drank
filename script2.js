@@ -10,6 +10,7 @@ var nearbyLocationBtn = $('#nearbyLocationBtn');
 $(document).ready(function () {
     getChosenDrink();
     getLocation();
+    $('.collapsible').collapsible();
 });
 
 function getChosenDrink() {
@@ -170,27 +171,30 @@ function showPosition(position) {
     console.log("Lat:" + currentLat + ", Lon:" + currentLon);
 }
 
+
 function getNearbySuggestions() {
-
     //var url = "https://api.yelp.com/v3/autocomplete?text=del&latitude=" + currentLat +"&longitude=" + currentLon;
-    var url = "https://api.yelp.com/v3/transactions/delivery/search?latitude=37.786882&longitude=-122.399972"
+    // https://cors-anywhere.herokuapp.com/corsdemo
+    var url =
+      "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=cocktail&latitude=37.786882&longitude=-122.399972";
     fetch(url, {
-        method: 'GET', // *GET, POST, PUT, DELETE, etc.
-        mode: 'no-cors', // no-cors, *cors, same-origin
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': 'Bearer XGPJzdsArujs0a5GBLbAgRXVjA0Ht8qthqX-MLFDM0pckAYtxRSmRcJCodfZ9Yxk9WsRQt7Isno_i1ZOlRrlEDY7laqvOLzkb23nclEnir1HfZkyAPxi8jOkwAZfYXYx'
-        }
-    }).then(function(response) {
-        if (response.ok) {
-            response.json().then(function(data) {
-                console.log(data);
-            })
-        }
+      method: "GET", // *GET, POST, PUT, DELETE, etc.
+      // mode: "no-cors", // no-cors, *cors, same-origin
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + yelpApiKey,
+      },
+    }).then(function (response) {
+      if (response.ok) {
+        response.json().then(function (data) {
+          console.log(data);
+          displaySuggestedLocations(data.businesses);
+        });
+      }
     });
-}
+  }
 
-function displayMap() {
+function fetchLocationSuggestions() {
     var apiUrl = "http://www.mapquestapi.com/geocoding/v1/batch?key=u1CqLkL4TtGYm7gJkTYRUEHkXQY1Mkyj&location=30.333472,-81.470448&includeRoadMetadata=true&includeNearestIntersection=true&thumbMaps=true"
     fetch(apiUrl).then(function (response) {
         if (response.ok) {
@@ -201,9 +205,54 @@ function displayMap() {
     })
 }
 
+function displaySuggestedLocations(locations) {
+    console.log(locations)
+    // for (var i = 0; i < 5; i++) {
+    //     var li = $('<li>');
+    //     var headerDiv= $('<div class="collapsible-header">');
+    //     headerDiv.text(locations[i].name + " - " + locations[i].location.display_address[0] + ", " + locations[i].location.display_address[1])
+    //     var bodyDiv = $('<div class="collapsible-body">');
+    //     var iframe = $('<iframe>')
+        
+    //     var mapUrl = "https://maps.google.com/maps?q=" + locations[i].coordinates.latitude + "," + locations[i].coordinates.longitude + "&hl=es;z=14&amp;output=embed";
+    //     console.log(mapUrl);
+    //     iframe.prop("src", mapUrl);
+        
+    //     $('.collapsible').append(li);
+    //     li.append(headerDiv)
+    //     li.append(bodyDiv)
+    //     bodyDiv.append(iframe)
+    // }
+
+    var li = $('<li class="collection-header">');
+    var h4 = $('<h4>');
+    h4.text("Suggested Locations");
+    li.append(h4);
+    
+    $('.collection').append(li);
+
+    for (var i = 0; i < 5; i++) {
+        var li = $('<li class="collection-item">');
+        var div = $('<div>');
+        div.text(locations[i].name + " - " + locations[i].location.display_address[0] + ", " + locations[i].location.display_address[1]);
+        
+        var a = $('<a class="secondary-content">');
+        var mapUrl = "https://maps.google.com/maps?q=" + locations[i].coordinates.latitude + "," + locations[i].coordinates.longitude + "&hl=es;z=14&amp;output=embed";
+        a.attr("href", mapUrl);
+        a.attr("target", "_blank");
+        var iEl = $('<i class="material-icons">');
+        iEl.text("send");
+
+        $('.collection').append(li);
+        li.append(div);
+        div.append(a);
+        a.append(iEl);
+    }
+}
+
 
 submitRatingBtn.on("click", submitRating);
-nearbyLocationBtn.on("click", displayMap);
+nearbyLocationBtn.on("click", getNearbySuggestions);
 
 
 
