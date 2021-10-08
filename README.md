@@ -31,7 +31,7 @@ This app will allow a user to input or “check-in” a mixed-drink as they enjo
 
 ## See it in Action!
 
-* [https://amackenzie26.github.io/drink-rating-app/](#)
+* [https://youtu.be/_6-XI74WkyM](Enjoy!)
 
 ## Deployed Link
 
