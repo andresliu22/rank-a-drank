@@ -39,7 +39,7 @@ function displayChosenDrink(data) {
         console.log(drinks[i]);
         var card = $('<div>')
         card.addClass("card");
-        card.css({ "width": '300px', "margin": "10px" })
+        card.css({ "flex": "1 0 300px", "margin": "10px" })
         var cardHeader = $('<div>');
         cardHeader.addClass("card-divider");
         var cardImg = $('<img>');
@@ -170,7 +170,7 @@ function displaySuggestDrink(drink) {
     var card = $('<a>')
     card.addClass("card");
     card.attr("href", "cocktail.html?drink=" + drink.strDrink);
-    card.css({ "width": "300px", "margin": "10px" })
+    card.css({ "flex": "1 0 300px", "margin": "10px" })
     var cardHeader = $('<div>');
     cardHeader.addClass("card-divider");
     var cardImg = $('<img>');
@@ -201,7 +201,10 @@ function showPosition(position) {
 function getNearbySuggestions() {
     var url =
       "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=cocktail&latitude=37.786882&longitude=-122.399972";
-    fetch(url, {
+    
+    // https://cors-anywhere.herokuapp.com/corsdemo
+    
+      fetch(url, {
       method: "GET", // *GET, POST, PUT, DELETE, etc.
       // mode: "no-cors", // no-cors, *cors, same-origin
       headers: {
@@ -230,24 +233,6 @@ function fetchLocationSuggestions() {
 }
 
 function displaySuggestedLocations(locations) {
-    console.log(locations)
-    // for (var i = 0; i < 5; i++) {
-    //     var li = $('<li>');
-    //     var headerDiv= $('<div class="collapsible-header">');
-    //     headerDiv.text(locations[i].name + " - " + locations[i].location.display_address[0] + ", " + locations[i].location.display_address[1])
-    //     var bodyDiv = $('<div class="collapsible-body">');
-    //     var iframe = $('<iframe>')
-        
-    //     var mapUrl = "https://maps.google.com/maps?q=" + locations[i].coordinates.latitude + "," + locations[i].coordinates.longitude + "&hl=es;z=14&amp;output=embed";
-    //     console.log(mapUrl);
-    //     iframe.prop("src", mapUrl);
-        
-    //     $('.collapsible').append(li);
-    //     li.append(headerDiv)
-    //     li.append(bodyDiv)
-    //     bodyDiv.append(iframe)
-    // }
-
     var li = $('<li class="collection-header">');
     var h4 = $('<h4>');
     h4.text("Suggested Locations");

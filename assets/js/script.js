@@ -46,7 +46,6 @@ function submitDrink(event) {
 }
 
 function displayDrinks(data) {
-
     var drinks = data.drinks;
 
     for (var i = 0; i < drinks.length; i++) {
@@ -64,7 +63,7 @@ function displayDrinks(data) {
         cardHeader.text(drinks[i].strDrink);
         cardImg.attr("src", drinks[i].strDrinkThumb);
 
-        cardSection.append('<h4><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></h4>');
+        cardSection.append('<h4><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></h4>');
         card.append(cardHeader);
         card.append(cardImg);
         card.append(cardSection);

@@ -20,6 +20,7 @@ nav ul {
     display: flex !important;
     justify-content: space-between !important;
     min-width: 300px !important;
+    list-style: none;
 }
 
 nav a {
