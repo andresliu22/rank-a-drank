@@ -203,7 +203,7 @@ function showPosition(position) {
 
 function getNearbySuggestions() {
     var url =
-        "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=cocktail&latitude=37.786882&longitude=-122.399972";
+        "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=cocktail&latitude=" + currentLat + "&longitude=" + currentLon;
 
     // https://cors-anywhere.herokuapp.com/corsdemo
 

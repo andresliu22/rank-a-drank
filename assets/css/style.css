@@ -91,7 +91,7 @@ main {
     border-width: 2px;
     border-radius: 20px;
     border-color: #DA1259;
-    filter: drop-shadow(5px 5px 5px gold);
+    filter: drop-shadow(5px 5px 5px #E9BD2F);
 }
 
 .card-divider {
