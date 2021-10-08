@@ -1,8 +1,11 @@
 # drink-rating-app
 
-For this project we used HTML, CSS, Javascript, existing third-party API’s and server side API’s to create an app with a dynamic user interface. We researched and utilized a variety of technologies (listed below) in order to make the app interactive, purposeful and asthetically pleasing. This app allows users to try a drink at a specific location, rate that drink, provide their location, and will generate nearby venues and personalized drink suggestions.
+For this project we used HTML, CSS, Javascript, existing third-party API’s and server side API’s to create an app with a dynamic user interface. We researched and utilized a variety of technologies (listed below) in order to make the app interactive, purposeful and asthetically pleasing. We embraced a collaborative approach to the creation of this app and used pair programming
 
-##
+We took turns “driving” while the other two “navigated” then would switch roles.
+
+We wanted our code to be a true team effort, where we would all be able to claim ownership over every aspect because we worked together to construct it. 
+
 
 ## App Overview
 
@@ -23,14 +26,13 @@ This data will be saved in their dashboard and sorted in descending order: from 
 * [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) - to style the html elements
 * [Javascript](https://www.javascript.com/) - to create actions on the page
 * [jQuery](https://jquery.com/) - to add actions to the page
-* [Foundation CSS](https://get.foundation/sites/docs-v5/css.html) - style the page
+* [Materialize](https://materializecss.com/) - a library that provides set CSS styles 
 * [Parsley](http://parsleyjs.org/doc/index.html) - to set requirements for the form input
-* []() 
 * [Git](https://git-scm.com/) - to track changes and push commits
 * [GitHub](github.com) - to host the repository and deploy with GitHub pages
-* [Cocktail DB API]( put link here) - to provide the drink data for user input and suggestions
-* [Google Maps Api] ( put link here ) - to locate the user's current location and provide latitude/longitude to Yelp Places API
-* [Yelp Places API] ( put link here ) - to locate nearby venues (bars, restaurants, and liquor stores) based on the user's location
+* [Cocktail DB API](https://www.thecocktaildb.com/) - to provide the drink data for user input and suggestions
+*[Geolocation API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API) - to enable location services upon page load
+* [Yelp API](https://www.yelp.com/developers) - to locate nearby venues (bars, restaurants, and liquor stores) based on the user's location
 
 
 ## Deployed Link
