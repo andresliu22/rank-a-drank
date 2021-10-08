@@ -1,0 +1,125 @@
+header {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0% 2%;
+    color: #ffa974;
+}
+  
+header .logo img {
+    height: 120px;
+}
+
+nav {
+    background-color: white;
+    border-style: none;
+    width: 300px;
+    box-shadow: none;
+}
+nav ul {
+    display: flex !important;
+    justify-content: space-between !important;
+    min-width: 300px !important;
+    list-style: none;
+}
+
+nav a {
+    color: #ffa974 !important;
+    font-weight: bold !important;
+    text-decoration: none !important;
+    font-size: 24px !important;
+    padding: 15px !important;
+}
+
+h1 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#drinkInput {
+    display: block;
+    position: static;
+    width: 50%;
+}
+
+#ingredientInput {
+    display: block;
+    position: static;
+    width: 50%;
+}
+
+/* #drinkSubmit {
+    top: 0;
+    left: 0;
+    display: block;
+}
+
+#switchBtn {
+    top: 0;
+    left: 0;
+    display: block;
+} */
+
+.drinks-card {
+    border-width: 2px;
+    filter: drop-shadow(10px 10px 10px blue);
+}
+
+.card {
+    flex: 1 0 300px;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 20px;
+    border-color: black;
+    filter: drop-shadow(5px 5px 5px gold);
+}
+
+.card-divider {
+    background-color: white;
+}
+
+.card-section {
+    background-color: #E9BD2F;
+}
+
+.checked {
+    color: blue;
+}
+
+input.parsley-success,
+select.parsley-success,
+textarea.parsley-success {
+  color: #468847;
+  background-color: #DFF0D8;
+  border: 1px solid #D6E9C6;
+}
+
+input.parsley-error,
+select.parsley-error,
+textarea.parsley-error {
+  color: #B94A48;
+  background-color: #F2DEDE;
+  border: 1px solid #EED3D7;
+}
+
+.parsley-errors-list {
+  margin: 2px 0 3px;
+  padding: 0;
+  list-style-type: none;
+  font-size: 0.9em;
+  line-height: 0.9em;
+  opacity: 0;
+  color: #B94A48;
+  transition: all .3s ease-in;
+  -o-transition: all .3s ease-in;
+  -moz-transition: all .3s ease-in;
+  -webkit-transition: all .3s ease-in;
+}
+
+.parsley-errors-list.filled {
+  opacity: 1;
+}
+
+a.card, a.card:hover, a.card:focus, a.card:active {
+    text-decoration: none;
+    color: inherit;
+}

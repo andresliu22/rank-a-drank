@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+    <!-- Compressed CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
+        integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Drink Rating App</title>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <img src="./assets/images/small-logo.png" alt="logo">
+    </div>
+    <nav>
+        <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="#dashboard">Dashboard</a></li>
+        </ul>
+    </nav>
+  </header>
+
+    <main>
+      <div class="container">
+        <div class="row">
+          <div class="col s4">
+            <div class="chosen-drink-card" id="chosen-drink-card"></div>
+          </div>
+          <div class="col s4">
+            <div class="drinkInfo" id="drinkInfo">
+            </div>
+            
+          </div>
+          <div class="col s4">
+            <div class="suggested-drink-card" id="suggested-drink-card"></div>
+          </div>
+        </div>
+
+        <div class="col s12">
+          <div class="buttons-div">
+            <button class="button success submitRating" id="submitRating">Submit Rating</button>
+            <button class="button nearbyLocationBtn" id="nearbyLocationBtn">Get Nearby Location</button>
+        </div>
+        </div>
+        <div class="row">
+          <div class="col s12">
+            <div class="mapLocation" id="mapLocation">
+              <ul class="collection with-header"></ul>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+  </main>
+
+  <footer>
+    Made with Luv
+  </footer>
+    
+
+    
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+    <!-- Compressed JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
+        integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
+    
+    <script src="./assets/js/cocktail.js"></script>
+
+</body>
+
+</html>
