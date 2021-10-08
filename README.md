@@ -17,7 +17,8 @@ This app will allow a user to input or “check-in” a mixed-drink as they enjo
 * [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) - to style the html elements
 * [Javascript](https://www.javascript.com/) - to create actions on the page
 * [jQuery](https://jquery.com/) - to add actions to the page
-* [Materialize](https://materializecss.com/) - a library that provides set CSS styles 
+* [Materialize](https://materializecss.com/) - a framework that provides set CSS styles for the grids and lists on the page
+* [Foundations](https://get.foundation/) - a framework that provides styling for the form and card displays
 * [Parsley](http://parsleyjs.org/doc/index.html) - to set requirements for the form input
 * [Git](https://git-scm.com/) - to track changes and push commits
 * [GitHub](github.com) - to host the repository and deploy with GitHub pages
