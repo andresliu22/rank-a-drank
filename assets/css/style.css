@@ -21,12 +21,6 @@ header .logo {
 
 header .logo img {
     height: 120px;
-    position: static;
-}
-
-h1 {
-    margin-right: 530px;
-    margin-top: 5px;
 }
 
 header .logo h1 {
@@ -195,4 +189,11 @@ footer .made-by {
         display: block;
     }
 
+    header .logo img {
+        height: 100px;
+    }
+    
+    header .logo h1 {
+        font-size: 25px;
+    }
 }
