@@ -123,3 +123,7 @@ a.card, a.card:hover, a.card:focus, a.card:active {
     text-decoration: none;
     color: inherit;
 }
+
+@media screen {
+    
+}
