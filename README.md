@@ -45,6 +45,10 @@ This app will allow a user to input or “check-in” a mixed-drink as they enjo
 * Provide photo-capabilities so that users can take a picture of their drink and submit it globally with their rating
 * Create badges (awards/accomplishments) that users can earn by checking in drinks based on a variety of criteria and displaying these badges to their dashboard timeline -- ie: "The Trailblazer" badge:  "Congrats!  You were the first to check-in this drink at this location!  Don't forget to leave a review."
 
+## View Our Presentation
+
+* [https://docs.google.com/presentation/d/1LHj3-_XvBGqtzaWRXGAeHQdskzWiP-3AZoW26FeOLsM/edit?usp=sharing](#)
+
 ## Authors
 
 * Andres Liu [https://www.linkedin.com/in/andresliu22/]
