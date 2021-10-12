@@ -36,7 +36,7 @@ This app will allow a user to input or “check-in” a mixed-drink as they enjo
 
 ## Deployed Link
 
-* [https://amackenzie26.github.io/drink-rating-app/](#)
+* [https://andresliu22.github.io/rank-a-drank/](#)
 
 ## Future Developments
 * Update storage to a system where ratings can be submitted globally and the average rating (of all users) for each drink will appear beneath the thumbnail of the drink
